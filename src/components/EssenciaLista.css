@@ -1,0 +1,137 @@
+.EssenciaLista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+.EssenciaListaItem {
+    font-family: "Exo";
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    width: 315px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;    
+}
+
+#Front {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transform: rotateY(180deg);
+}
+
+#Text-image {
+  display: none;
+  position: absolute;
+  color: white;
+  font-size: larger;
+  text-shadow: 2px 2px 2px #000;
+  font-weight: 600;
+  z-index: 2;
+  padding: 10px;
+  transform: rotateY(180deg);
+
+  
+}
+  
+  img.EssenciaListaItem__front {
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    width: 335px;
+    height: 168px;
+    object-fit: cover;
+  }
+  
+  .EssenciaListaItem > div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .EssenciaListaItem__content {
+    display: flex;
+    width: 210px;
+  }
+
+  .EssenciaListaItem__titulo {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 100%;
+  }
+  
+  .EssenciaListaItem__descricao {
+    font-size: 0.85em;
+    justify-content: center;
+    width: 230px;
+  }
+  
+  .EssenciaListaItem__preco {
+    color: darkviolet;
+  }
+  
+  .Acoes {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Acoes__adicionar,
+  .Acoes__remover {
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-family: "Exo", sans-serif;
+    padding: 5px;
+    max-width: 280px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 48%;
+  }
+  
+  .Acoes__remover {
+    background-color: red;
+  }
+  
+  .Acoes__adicionar {
+    background-color: darkviolet;
+  }
+  
+  .Acoes__adicionar--preencher {
+    width: 100%;
+  }
+  
+  .EssenciaListaItem__foto {
+    height: 148px;
+    margin-right: -8px;
+  }
+
+  img.EssenciaListaItem__foto {
+    width: 110px;
+    object-fit: cover;
+  }
+
+  .EssenciaListaItem__badge {
+    background-color: greenyellow;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    color: black;
+    font-size: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: -9px;
+    left: -9px;
+    z-index: 2;
+  }
