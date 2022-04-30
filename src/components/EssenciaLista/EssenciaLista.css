@@ -1,0 +1,11 @@
+.EssenciaLista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
