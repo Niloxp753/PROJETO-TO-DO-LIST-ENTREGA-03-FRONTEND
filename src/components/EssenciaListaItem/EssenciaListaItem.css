@@ -12,7 +12,11 @@ div.EssenciaListaItem {
   justify-content: space-around;
   gap: 2px;
   transform-style: preserve-3d;
+<<<<<<< HEAD
   transition: all 0.8s linear;
+=======
+  transition: all 0.5s linear 0.1s;
+>>>>>>> master
 }
 
 .EssenciaListaItem:hover {
