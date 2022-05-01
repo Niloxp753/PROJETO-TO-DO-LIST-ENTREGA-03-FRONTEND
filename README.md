@@ -33,6 +33,7 @@ Read By Id (1,8 pontos).
   <img align="center" alt="CSS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="nodejs" height="40" width="40" src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg">
   <img align="center" alt="react" height="40" width="40" src="https://img.icons8.com/color/48/000000/react-native.png"> 
+  <img align="center" alt="Js" height="40" width="40" src="https://img.icons8.com/color/48/000000/javascript--v1.png"> 
  </div> </p>
  
  
