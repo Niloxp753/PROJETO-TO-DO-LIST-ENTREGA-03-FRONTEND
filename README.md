@@ -25,7 +25,7 @@ Read By Id (1,8 pontos).
 #### Tecnologias: ReactJS
 #### Carga horária: 20 horas
 
-## <h1> <i>Stacks✔️<i></h1>
+## <h1> <i>Stacks Utilizadas✔️<i></h1>
  
 <p align="center">
  <div align="center"><br>
