@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "cardapio-el-geladon",
-=======
   "name": "cardapio-mg-tabacaria",
->>>>>>> master
   "version": "0.1.0",
   "private": true,
   "dependencies": {
