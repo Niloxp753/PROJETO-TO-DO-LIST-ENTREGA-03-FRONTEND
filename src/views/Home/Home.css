@@ -1,26 +1,24 @@
 .Home {
-    position: relative;
-    background: linear-gradient(-45deg, #FF5F00, #FF5F00, #00092C, #EEEEEE);
-    background-size: 300% 200%;
-    animation: colors 15s ease-in infinite;
-    min-height: calc(100vh - 60px);
-    margin: 15px;
-    padding: 15px;
-    border-radius: 20px;
-    color: #000;
-    box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
-  }
+  position: relative;
+  background: linear-gradient(-45deg, #FF5F00, #FF5F00, #00092C, #EEEEEE);
+  background-size: 300% 200%;
+  animation: colors 15s ease-in infinite;
+  min-height: calc(100vh - 60px);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  color: #000;
+  box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
 
+.Home__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
   .Home__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: unset;
   }
-  
-  @media (max-width: 350px) {
-    .Home__container {
-      justify-content: unset;
-    }
-  }
-
-  
+}

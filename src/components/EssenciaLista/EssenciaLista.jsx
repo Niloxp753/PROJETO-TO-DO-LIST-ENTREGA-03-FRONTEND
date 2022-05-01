@@ -23,13 +23,14 @@ function EssenciaLista() {
   return (
     <div className="EssenciaLista">
       {essencias.map((essencia, index) => (
-        <EssenciaListaItem 
-          key={`EssenciaListaItem-${index}`} 
-          essencia = {essencia}
+        <EssenciaListaItem
+          key={`EssenciaListaItem-${index}`}
+          essencia={essencia}
           quantidadeSelecionada={essenciaSelecionada[index]}
-          index={index} 
-          onRemove={index => removerItem(index)}
-          onAdd={index => adicionarItem(index)} />
+          index={index}
+          onRemove={(index) => removerItem(index)}
+          onAdd={(index) => adicionarItem(index)}
+        />
       ))}
     </div>
   );

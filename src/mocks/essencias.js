@@ -97,7 +97,7 @@ export const essencias = [
   {
     titulo: "Caffè Macchiato",
     descricao:
-      "Pureza e aroma são a definição dessa essência que traz à tona toda a composição refinada encontrada nos melhores grãos de café.",
+      "Pureza e aroma são a definição dessa essência que traz à tona toda a composição refinada nos melhores grãos de café.",
     foto: require("../assets/images/cafe.png"),
     preco: 7.0,
     sabor: "Café",
@@ -170,7 +170,7 @@ export const essencias = [
   {
     titulo: "Grape Starburst",
     descricao:
-      "Trazendo uma incrível explosão de sabor e suavidade, a Grape Starburst se destaca dentre todas as outras.",
+      "Trazendo uma incrível explosão de sabor e suavidade, essa se destaca dentre todas as outras.",
     foto: require("../assets/images/uva.png"),
     preco: 7.0,
     sabor: "Uva",

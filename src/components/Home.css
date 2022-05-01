@@ -1,3 +1,28 @@
+.Home {
+  position: relative;
+  background: linear-gradient(-45deg, #FF5F00, #FF5F00, #00092C, #EEEEEE);
+  background-size: 300% 200%;
+  animation: colors 15s ease-in infinite;
+  min-height: calc(100vh - 60px);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  color: black;
+  box-shadow: 10px 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Home__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
+  .Home__container {
+    justify-content: unset;
+  }
+}
+
 .Header {
   max-width: 1110px;
   margin: 0 auto 25px auto;
@@ -8,8 +33,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin: 20px 0 55px 0;
-  gap: 10px;
+  margin: 20px 0 35px 0;
 }
 
 .Logo {
@@ -17,26 +41,22 @@
   align-items: center;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.3);
-  width: 265px;
+  width: 340px;
   height: 45px;
 }
 
 .Logo__titulo {
-  position: relative;
-  left: 45px;
+  position: absolute;
+  left: 55px;
   font-family: "Exo";
-  font-weight: 550;
-  font-size: 2.0em;
-  color: #000;
-  text-shadow: 3px 3px 3px #fff;
-
+  font-weight: 600;
+  font-size: 2.4em;
 }
 
 .Logo__icone {
   position: absolute;
-  left: -30px;
-  top: -28px;
-  filter: invert(1);
+  left: -20px;
+  top: -25px;
 }
 
 .Sacola {
@@ -48,7 +68,7 @@
 }
 
 .Sacola__badge {
-  background-color: #ff0000;
+  background-color: red;
   width: 20px;
   height: 20px;
   text-align: center;
@@ -82,7 +102,7 @@
   }
 
   .row {
-    gap: 20px;
+    column-gap: 20px;
   }
 
   .Logo__titulo {

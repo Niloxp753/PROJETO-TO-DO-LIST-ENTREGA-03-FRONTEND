@@ -1,9 +1,12 @@
 import "./EssenciaListaItem.css";
 
-function EssenciaListaItem({essencia, quantidadeSelecionada, index, onRemove, onAdd}) {
-
- 
-
+function EssenciaListaItem({
+  essencia,
+  quantidadeSelecionada,
+  index,
+  onRemove,
+  onAdd,
+}) {
   const badgeCounter = (canRender, index) =>
     Boolean(canRender) && (
       <span className="EssenciaListaItem__badge">
@@ -21,10 +24,18 @@ function EssenciaListaItem({essencia, quantidadeSelecionada, index, onRemove, on
   return (
     <div className="EssenciaListaItem">
       {badgeCounter(quantidadeSelecionada, index)}
+      <div id="Front">
+        <img
+          className="EssenciaListaItem__front"
+          src={essencia.front}
+          alt={`Essência de ${essencia.sabor}`}
+        ></img>
+        <span id="Text-image">{`${essencia.titulo}`}</span>
+      </div>
       <div className="EssenciaListaItem__content">
         <div className="EssenciaListaItem__titulo">{essencia.titulo}</div>
         <div className="EssenciaListaItem__preco">
-          {essencia.preco.toFixed(2)}
+          R${essencia.preco.toFixed(2)}
         </div>
         <div className="EssenciaListaItem__descricao">{essencia.descricao}</div>
         <div className="EssenciaListaItem__acoes Acoes">
@@ -44,14 +55,6 @@ function EssenciaListaItem({essencia, quantidadeSelecionada, index, onRemove, on
         src={essencia.foto}
         alt={`Essência de ${essencia.sabor}`}
       />
-      <div id="Front">
-        <img
-          className="EssenciaListaItem__front"
-          src={essencia.front}
-          alt={`Essência de ${essencia.sabor}`}
-        ></img>
-        <span id="Text-image">{`${essencia.titulo}`}</span>
-      </div>
     </div>
   );
 }

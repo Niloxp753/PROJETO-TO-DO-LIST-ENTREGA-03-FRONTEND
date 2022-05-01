@@ -1,59 +1,53 @@
-div.EssenciaListaItem {
-  perspective: 1000px;
+.EssenciaLista {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 .EssenciaListaItem {
   font-family: "Exo";
-  background: radial-gradient(#F4EEFF, #DCD6F7, #A6B1E1, #424874) ;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 10px;
   width: 315px;
   display: flex;
   justify-content: space-around;
-  gap: 2px;
-  transform-style: preserve-3d;
-  transition: all 0.5s linear 0.1s;
+  position: relative;
 }
-
-.EssenciaListaItem:hover {
-  transform: rotateY(180deg);
-}
-
-.EssenciaListaItem:hover .EssenciaListaItem__badge {
-  transform: rotateY(180deg);
-}
-
-.EssenciaListaItem:active {
-  transform: rotateY(180deg);
-}
-
 
 #Front {
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
-  backface-visibility: hidden;
-  z-index: 0;
+  transform: rotateY(180deg);
 }
 
 #Text-image {
+  display: none;
   position: absolute;
-  left: 120px;
-  color: #ffffff;
-  font-size: x-large;
-  text-shadow: 3px 3px 2px #000;
+  color: white;
+  font-size: larger;
+  text-shadow: 2px 2px 2px #000;
   font-weight: 600;
+  z-index: 2;
+  padding: 10px;
+  transform: rotateY(180deg);
+
+
 }
 
 img.EssenciaListaItem__front {
+  display: none;
   position: absolute;
   border-radius: 10px;
-  left: -10px;
   width: 335px;
   height: 168px;
   object-fit: cover;
-  transform: rotateY(180deg);
 }
 
 .EssenciaListaItem>div {
@@ -65,29 +59,22 @@ img.EssenciaListaItem__front {
 .EssenciaListaItem__content {
   display: flex;
   width: 210px;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
 }
 
 .EssenciaListaItem__titulo {
   font-size: 1.5em;
   font-weight: 700;
   line-height: 100%;
-  text-shadow: 2px 2px 2px #fff;
 }
 
 .EssenciaListaItem__descricao {
   font-size: 0.85em;
   justify-content: center;
-  width: 220px;
-  font-weight: 550;
-  display: flex;
+  width: 230px;
 }
 
 .EssenciaListaItem__preco {
-  color: #fff;
-  font-weight: 600;
-  text-shadow: 2px 2px 2px #000;
+  color: darkviolet;
 }
 
 .Acoes {
@@ -98,7 +85,7 @@ img.EssenciaListaItem__front {
 .Acoes__adicionar,
 .Acoes__remover {
   border: none;
-  color: #ffffff;
+  color: white;
   border-radius: 5px;
   font-family: "Exo", sans-serif;
   padding: 5px;
@@ -111,11 +98,11 @@ img.EssenciaListaItem__front {
 }
 
 .Acoes__remover {
-  background-color: #800606;
+  background-color: red;
 }
 
 .Acoes__adicionar {
-  background-color: #2b910c;
+  background-color: darkviolet;
 }
 
 .Acoes__adicionar--preencher {
@@ -130,18 +117,16 @@ img.EssenciaListaItem__front {
 img.EssenciaListaItem__foto {
   width: 110px;
   object-fit: cover;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
 }
 
 .EssenciaListaItem__badge {
-  background-color: #adff2f;
-  width: 30px;
-  height: 30px;
+  background-color: greenyellow;
+  width: 20px;
+  height: 20px;
   text-align: center;
   vertical-align: middle;
   position: absolute;
-  color: #000000;
+  color: black;
   font-size: .8em;
   display: flex;
   justify-content: center;
@@ -150,5 +135,4 @@ img.EssenciaListaItem__foto {
   top: -9px;
   left: -9px;
   z-index: 2;
-  transform: rotateY(360deg);
 }
