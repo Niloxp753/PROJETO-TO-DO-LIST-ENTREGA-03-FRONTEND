@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background: linear-gradient(-45deg, #F0F5F9, #C9D6DF, #52616B, #1E2022);
+    background-size: 400% 300%;
+    animation: colors 15s ease-in infinite;
+    font-family: sans-serif;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
