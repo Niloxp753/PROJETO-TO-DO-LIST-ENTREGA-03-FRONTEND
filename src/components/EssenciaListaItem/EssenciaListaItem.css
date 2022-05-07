@@ -13,6 +13,7 @@ div.EssenciaListaItem {
   gap: 2px;
   transform-style: preserve-3d;
   transition: all 0.5s linear 0.1s;
+  cursor: pointer;
 }
 
 .EssenciaListaItem:hover {

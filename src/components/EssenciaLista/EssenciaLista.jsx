@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EssenciaListaItem from "components/EssenciaListaItem/EssenciaListaItem";
-import { essencias } from "mocks/essencias.js";
+import { EssenciaService } from "services/EssenciaService";
+import EssenciaDetalhesModal from "components/EssenciaDetalhesModal/EssenciaDetalhesModal";
 import "./EssenciaLista.css";
 
 function EssenciaLista() {
+  const [essencias, setEssencias] = useState([]);
+
   const [essenciaSelecionada, setEssenciaSelecionada] = useState({});
+
+  const [essenciaModal, setEssenciaModal] = useState(false);
 
   const adicionarItem = (essenciaIndex) => {
     const essencia = {
@@ -20,6 +25,20 @@ function EssenciaLista() {
     setEssenciaSelecionada({ ...essenciaSelecionada, ...essencia });
   };
 
+  useEffect(() => {
+    getLista();
+  }, []);
+
+  const getLista = async () => {
+    const response = await EssenciaService.getLista();
+    setEssencias(response);
+  };
+
+  const getEssenciaById = async (essenciaId) => {
+    const response = await EssenciaService.getById(essenciaId);
+    setEssenciaModal(response);
+  }
+
   return (
     <div className="EssenciaLista">
       {essencias.map((essencia, index) => (
@@ -30,8 +49,15 @@ function EssenciaLista() {
           index={index}
           onRemove={(index) => removerItem(index)}
           onAdd={(index) => adicionarItem(index)}
+          clickItem={(essenciaId) => getEssenciaById(essenciaId)}
         />
       ))}
+      {essenciaModal && (
+        <EssenciaDetalhesModal
+          essencia={essenciaModal}
+          closeModal={() => setEssenciaModal(false)}
+        />
+      )}
     </div>
   );
 }
