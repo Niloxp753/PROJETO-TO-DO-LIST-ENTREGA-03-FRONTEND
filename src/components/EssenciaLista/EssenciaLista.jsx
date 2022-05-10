@@ -25,14 +25,14 @@ function EssenciaLista() {
     setEssenciaSelecionada({ ...essenciaSelecionada, ...essencia });
   };
 
-  useEffect(() => {
-    getLista();
-  }, []);
-
   const getLista = async () => {
     const response = await EssenciaService.getLista();
     setEssencias(response);
   };
+
+  useEffect(() => {
+    getLista();
+  }, []);
 
   const getEssenciaById = async (essenciaId) => {
     const response = await EssenciaService.getById(essenciaId);

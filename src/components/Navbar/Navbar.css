@@ -45,6 +45,7 @@
 
 .Sacola__icone {
   cursor: pointer;
+  filter: invert(1);
 }
 
 .Sacola__badge {
@@ -64,6 +65,20 @@
   right: 0;
 }
 
+.Opcoes {
+  display: flex;
+}
+
+.Essencia {
+  background: none;
+  border: none;
+}
+
+.Essencia__icone {
+  cursor: pointer;
+  filter: invert(1);
+}
+
 @media (max-width: 1220px) {
   .Header {
     max-width: 720px;
@@ -73,6 +88,11 @@
 @media (max-width: 840px) {
   .Header {
     max-width: 320px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
 }
 
@@ -85,7 +105,12 @@
     gap: 20px;
   }
 
+  .Logo {
+    width: 100%;
+  }
+
   .Logo__titulo {
     font-size: 1.5em;
   }
 }
+
