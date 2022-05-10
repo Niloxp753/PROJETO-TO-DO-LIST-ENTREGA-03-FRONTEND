@@ -88,10 +88,12 @@ function AdicionaEssenciaModal({ closeModal }) {
             />
           </div>
           <div>
-            <label className="AdicionaEssenciaModal__text AdicionaEssenciaModal__foto-label" htmlFor="front">
+            <label className="AdicionaEssenciaModal__text AdicionaEssenciaModal__foto-label" 
+            htmlFor="front">
               {!state.front.length ? "Selecionar Imagem Frontal" : state.front}
             </label>
             <input
+              className="AdicionaEssenciaModal__foto"
               id="front"
               type="file"
               value={state.front}
