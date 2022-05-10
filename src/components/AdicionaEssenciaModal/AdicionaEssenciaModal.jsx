@@ -76,7 +76,7 @@ function AdicionaEssenciaModal({ closeModal }) {
               className="AdicionaEssenciaModal__text AdicionaEssenciaModal__foto-label"
               htmlFor="foto"
             >
-              {!state.foto.length ? "Selecionar Imagem" : state.foto}
+              {!state.foto.length ? "Selecionar Imagem da Essência" : state.foto}
             </label>
             <input
               className="AdicionaEssenciaModal__foto"
@@ -88,8 +88,8 @@ function AdicionaEssenciaModal({ closeModal }) {
             />
           </div>
           <div>
-            <label className="AdicionaEssenciaModal__text" htmlFor="front">
-              {!state.front.length ? "Selecionar Imagem" : state.front}
+            <label className="AdicionaEssenciaModal__text AdicionaEssenciaModal__foto-label" htmlFor="front">
+              {!state.front.length ? "Selecionar Imagem de Trás do Card" : state.front}
             </label>
             <input
               id="front"
