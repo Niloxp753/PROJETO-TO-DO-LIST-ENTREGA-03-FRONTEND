@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "components/Modal/Modal";
 
-import "./AdicionarEssenciaModal.css";
+import "../AdicionaEssenciaModal/AdicionaEssenciaModal.css";
 
 function AdicionaEssenciaModal({ closeModal }) {
   const form = {
