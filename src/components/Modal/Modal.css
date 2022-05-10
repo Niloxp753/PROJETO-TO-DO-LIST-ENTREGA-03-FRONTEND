@@ -25,7 +25,6 @@
     padding: 5px;
     border-radius: 50%;
     color: white;
-    transform: rotate(45deg);
     transition: all 3s;
     background-color: rgba(0, 0, 0, 0.2);
   }
