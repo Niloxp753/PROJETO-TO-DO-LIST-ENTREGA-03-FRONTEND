@@ -4,7 +4,7 @@ import { EssenciaService } from "services/EssenciaService";
 import EssenciaDetalhesModal from "components/EssenciaDetalhesModal/EssenciaDetalhesModal";
 import "./EssenciaLista.css";
 
-function EssenciaLista({ essenciaCriada }) {
+function EssenciaLista({essenciaCriada}) {
   const [essencias, setEssencias] = useState([]);
 
   const [essenciaSelecionada, setEssenciaSelecionada] = useState({});

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import { EssenciaService } from "services/EssenciaService";
 
-import "../AdicionaEssenciaModal/AdicionaEssenciaModal.css";
+import "./AdicionaEssenciaModal/AdicionaEssenciaModal.css";
 
 function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
   const form = {
@@ -16,11 +16,6 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
   };
 
   const [state, setState] = useState(form);
-
-  const handleChange = (e, name) => {
-    setState({ ...state, [name]: e.target.value });
-  };
-
   const [canDisable, setCanDisable] = useState(true);
 
   const canDisableSendButton = () => {
@@ -33,6 +28,10 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
         state.titulo.length
     );
     setCanDisable(response);
+  };
+
+  const handleChange = (e, name) => {
+    setState({ ...state, [name]: e.target.value });
   };
 
   useEffect(() => {
@@ -55,9 +54,7 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
     };
 
     const response = await EssenciaService.create(essencia);
-
     onCreateEssencia(response);
-    
     closeModal();
   };
 
@@ -168,11 +165,9 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
           <button
             type="button"
             disabled={canDisable}
-            className="AdcionaEssenciaModal__enviar"
-            onClick={createEssencia}
-          >
-            {" "}
-            Enviar{" "}
+            className="AdicionaEssenciaModal__enviar"
+            onClick={createEssencia} >
+            Enviar
           </button>
         </form>
       </div>
