@@ -9,7 +9,10 @@ const transformEssencia = (essencia) => {
     ...essencia,
     id: essencia._id,
     titulo: essencia.titulo,
-    sabor: essencia.sabor
+    sabor: essencia.sabor,
+    descricao: essencia.descicao,
+    foto: essencia.foto,
+    front: essencia.front
     // ...(aroma && { aroma }),
     // possuiAroma: Boolean(aroma),
   };
