@@ -4,7 +4,7 @@ import { EssenciaService } from "services/EssenciaService";
 import EssenciaDetalhesModal from "components/EssenciaDetalhesModal/EssenciaDetalhesModal";
 import "./EssenciaLista.css";
 
-function EssenciaLista() {
+function EssenciaLista({ essenciaCriada }) {
   const [essencias, setEssencias] = useState([]);
 
   const [essenciaSelecionada, setEssenciaSelecionada] = useState({});
@@ -30,14 +30,23 @@ function EssenciaLista() {
     setEssencias(response);
   };
 
+  const getEssenciaById = async (essenciaId) => {
+    const response = await EssenciaService.getById(essenciaId);
+    setEssenciaModal(response);
+  };
+
   useEffect(() => {
     getLista();
   }, []);
 
-  const getEssenciaById = async (essenciaId) => {
-    const response = await EssenciaService.getById(essenciaId);
-    setEssenciaModal(response);
-  }
+  const adicionaEssenciaNaLista = (essencia) => {
+    const lista = [...essencias, essencia];
+    setEssencias(lista);
+  };
+
+  useEffect(() => {
+    if (essenciaCriada) adicionaEssenciaNaLista(essenciaCriada);
+  }, [essenciaCriada]);
 
   return (
     <div className="EssenciaLista">

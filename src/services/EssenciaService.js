@@ -26,8 +26,13 @@ export const EssenciaService = {
     fetch(Api.essenciaLista(), { method: "GET" }).then(parseTransformLista),
   getById: (id) =>
     fetch(Api.essenciaById(id), { method: "GET" }).then(parseTransformItem),
-  create: () =>
-    fetch(Api.createEssencia(), { method: "POST" }).then(parseResponse),
+  create: (essencia) =>
+    fetch(Api.createEssencia(), {
+      method: "POST",
+      body: JSON.stringify(essencia),
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+    }).then(parseTransformItem),
   updtateById: (id) =>
     fetch(Api.updateEssenciaById(id), { method: "PUT" }).then(parseResponse),
   deleteById: (id) =>
