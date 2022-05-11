@@ -1,3 +1,4 @@
+import { useState } from "react";
 import EssenciaLista from "components/EssenciaLista/EssenciaLista";
 import Navbar from "components/Navbar/Navbar";
 import AdicionaEssenciaModal from "components/AdicionaEssenciaModal/AdicionaEssenciaModal";
@@ -5,12 +6,16 @@ import "./Home.css";
 
 
 function Home() {
+
+  const [canShowAdicionaEssenciaModal, setCanShowEssenciaModal] = useState(false);
   return (
     <div className="Home">
-      <Navbar />
+      <Navbar createEssencia={() => setCanShowEssenciaModal(true)}/>
       <div className="Home__container">
         <EssenciaLista />
-        <AdicionaEssenciaModal />
+        {
+          canShowAdicionaEssenciaModal && (<AdicionaEssenciaModal closeModal={() => setCanShowEssenciaModal(false)}/>);
+        }
       </div>
     </div>
   );

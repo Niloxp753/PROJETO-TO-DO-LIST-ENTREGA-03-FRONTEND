@@ -21,7 +21,7 @@ function AdicionaEssenciaModal({ closeModal }) {
   return (
     <Modal closeModal={closeModal}>
       <div className="AdicionaEssenciaModal">
-        <form autocomplete="false">
+        <form autoComplete="off">
           <h2>Adicionar ao Cardápio</h2>
           <div>
             <label className="AdicionaEssenciaModal__text" htmlFor="preco">
@@ -90,7 +90,7 @@ function AdicionaEssenciaModal({ closeModal }) {
           <div>
             <label className="AdicionaEssenciaModal__text AdicionaEssenciaModal__foto-label" 
             htmlFor="front">
-              {!state.front.length ? "Selecionar Imagem Frontal" : state.front}
+              {!state.front.length ? "Selecionar Imagem do Sabor" : state.front}
             </label>
             <input
               className="AdicionaEssenciaModal__foto"
