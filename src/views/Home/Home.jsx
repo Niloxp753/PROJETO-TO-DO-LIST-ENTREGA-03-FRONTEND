@@ -14,7 +14,7 @@ function Home() {
       <div className="Home__container">
         <EssenciaLista />
         {
-          canShowAdicionaEssenciaModal && (<AdicionaEssenciaModal closeModal={() => setCanShowEssenciaModal(false)}/>);
+          canShowAdicionaEssenciaModal && (<AdicionaEssenciaModal closeModal={() => setCanShowEssenciaModal(false)}/>)
         }
       </div>
     </div>
