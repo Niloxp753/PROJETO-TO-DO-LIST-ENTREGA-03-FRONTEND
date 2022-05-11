@@ -45,8 +45,8 @@ function EssenciaLista({essenciaCriada}) {
   };
 
   useEffect(() => {
-    if (essenciaCriada) adicionaEssenciaNaLista(essenciaCriada);
-  }, [essenciaCriada]);
+    if (essenciaCriada) adicionaEssenciaNaLista(essenciaCriada)
+  }, [essenciaCriada]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="EssenciaLista">
