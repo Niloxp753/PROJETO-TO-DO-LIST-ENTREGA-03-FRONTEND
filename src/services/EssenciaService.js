@@ -3,18 +3,15 @@ import { Api } from "helpers/Api";
 const parseResponse = (response) => response.json();
 
 const transformEssencia = (essencia) => {
-  // const [sabor, aroma] = essencia.sabor.split(" com aroma ");
+  const [sabor, aroma] = essencia.sabor.split(" com aroma ");
 
   return {
     ...essencia,
     id: essencia._id,
-    titulo: essencia.titulo,
-    sabor: essencia.sabor,
-    descricao: essencia.descicao,
-    foto: essencia.foto,
-    front: essencia.front
-    // ...(aroma && { aroma }),
-    // possuiAroma: Boolean(aroma),
+    titulo: essencia.sabor,
+    sabor,
+    ...(aroma && { aroma }),
+    possuiAroma: Boolean(aroma),
   };
 };
 
