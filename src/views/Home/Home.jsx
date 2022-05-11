@@ -13,12 +13,12 @@ function Home() {
       <Navbar createEssencia={() => setCanShowEssenciaModal(true)} />
       <div className="Home__container">
         <EssenciaLista essenciaCriada={essenciaParaAdicionar} />
-        {canShowAdicionaEssenciaModal && (
+        {canShowAdicionaEssenciaModal && 
           <AdicionaEssenciaModal
             closeModal={() => setCanShowEssenciaModal(false)}
             onCreateEssencia={(essencia) => setEssenciaParaAdicionar(essencia)}
           />
-        )}
+        }
       </div>
     </div>
   );

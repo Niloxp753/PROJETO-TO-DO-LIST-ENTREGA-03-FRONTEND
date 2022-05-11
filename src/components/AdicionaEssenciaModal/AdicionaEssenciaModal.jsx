@@ -41,13 +41,12 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
   const createEssencia = async () => {
     const renomeiaCaminhoFoto = (fotoPath) => fotoPath.split("\\").pop();
 
-    const { titulo, sabor, aroma, descricao, preco, foto, front } = state;
+    const { titulo, sabor, descricao, preco, foto, front } = state;
 
     const essencia = {
       titulo,
       descricao,
       preco,
-      aroma,
       sabor,
       foto: `assets/images/${renomeiaCaminhoFoto(foto)}`,
       front: `assets/images/${renomeiaCaminhoFoto(front)}`,

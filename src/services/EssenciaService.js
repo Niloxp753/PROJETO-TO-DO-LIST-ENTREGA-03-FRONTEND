@@ -31,8 +31,8 @@ export const EssenciaService = {
       method: "POST",
       body: JSON.stringify(essencia),
       mode: "cors",
-      headers: { "Content-Type": "application/json" },
-    }).then(parseTransformItem),
+      headers: { "Content-Type": "application/json" 
+    } }).then(parseTransformItem),
   updtateById: (id) =>
     fetch(Api.updateEssenciaById(id), { method: "PUT" }).then(parseResponse),
   deleteById: (id) =>
