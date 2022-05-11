@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import { EssenciaService } from "services/EssenciaService";
 
-import "./AdicionaEssenciaModal/AdicionaEssenciaModal.css";
+import "../AdicionaEssenciaModal/AdicionaEssenciaModal.css";
 
 function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
   const form = {
