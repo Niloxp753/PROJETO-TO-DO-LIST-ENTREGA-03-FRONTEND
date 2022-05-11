@@ -2,10 +2,10 @@ import { Api } from "helpers/Api";
 
 const parseResponse = (response) => response.json();
 
-const transformEssencia = (essencia) => {
+const transformEssencia = async (essencia) => {
   const [sabor, aroma] = essencia.sabor.split(" com aroma ");
 
-  return {
+  return await {
     ...essencia,
     id: essencia._id,
     titulo: essencia.sabor,
