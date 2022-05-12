@@ -6,7 +6,7 @@ div.EssenciaListaItem {
   font-family: "Exo";
   background: radial-gradient(#F4EEFF, #DCD6F7, #A6B1E1, #424874) ;
   border-radius: 10px;
-  padding: 10px;
+  padding: 6.6px;
   width: 315px;
   display: flex;
   justify-content: space-around;
@@ -22,6 +22,10 @@ div.EssenciaListaItem {
 
 .EssenciaListaItem:hover .EssenciaListaItem__badge {
   transform: rotateY(180deg);
+}
+
+.EssenciaListaItem:hover .EssenciaListaItem__tag {
+  transform: rotateY(180deg);  
 }
 
 .EssenciaListaItem:active {
@@ -61,6 +65,7 @@ img.EssenciaListaItem__front {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  width: 100%;
 }
 
 .EssenciaListaItem__content {
@@ -133,6 +138,44 @@ img.EssenciaListaItem__foto {
   object-fit: cover;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+}
+
+.EssenciaListaItem--disable {
+  box-shadow: 0px 0px 7px rgba(148, 0, 211);
+}
+
+.EssenciaListaItem--disable,
+.EssenciaListaItem--disable .EssenciaListaItem__preco {
+  color: gray;
+}
+
+.EssenciaListaItem--disable .EssenciaListaItem__badge {
+  display: none;
+}
+
+.EssenciaListaItem--disable img {
+  filter: grayscale(100%);
+}
+
+.EssenciaListaItem--disable button:disabled {
+  background-color: gray;
+}
+
+.EssenciaListaItem__tag {
+  background-color: darkviolet !important;
+  color: white !important;
+  position: absolute;
+  font-size: 0.6em;
+  border-radius: 5px;
+  padding: 5px;
+  top: -15px;
+  left: -10px;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+span.EssenciaListaItem__tag {
+  transform: rotateY(360deg);
 }
 
 .EssenciaListaItem__badge {

@@ -72,11 +72,20 @@
 .Essencia {
   background: none;
   border: none;
+  transform: translateY(-3px);
+  border-radius: 3px;
+  transition: all .5s;
+  padding: 0;
 }
 
 .Essencia__icone {
   cursor: pointer;
   filter: invert(1);
+  transform: translateY(3px);
+}
+
+.Essencia--ativa {
+  filter: invert(2);
 }
 
 @media (max-width: 1220px) {

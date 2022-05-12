@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import { EssenciaService } from "services/EssenciaService";
 
-import "../AdicionaEssenciaModal/AdicionaEssenciaModal.css";
+import "./AdicionaEditaEssenciaModal.css";
 
-function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
+function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
   const form = {
     titulo: "",
     preco: "",
@@ -162,4 +162,4 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
   );
 }
 
-export default AdicionaEssenciaModal;
+export default AdicionaEditaEssenciaModal;

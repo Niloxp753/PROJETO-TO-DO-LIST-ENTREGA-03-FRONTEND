@@ -1,24 +1,39 @@
 import { useState } from "react";
+import { ActionMode } from "constants/index";
 import EssenciaLista from "components/EssenciaLista/EssenciaLista";
 import Navbar from "components/Navbar/Navbar";
-import AdicionaEssenciaModal from "components/AdicionaEssenciaModal/AdicionaEssenciaModal";
+import AdicionaEditaEssenciaModal from "components/AdicionaEditaEssenciaModal/AdicionaEditaEssenciaModal";
 import "./Home.css";
 
 function Home() {
   const [canShowAdicionaEssenciaModal, setCanShowAdicionaEssenciaModal] =
     useState(false);
   const [essenciaParaAdicionar, setEssenciaParaAdicionar] = useState();
+
+  const [modoAtual, setModoAtual] = useState(ActionMode.NORMAL);
+
+  const handleActions = (action) => {
+    const novaAcao = modoAtual === action ? ActionMode.NORMAL : action;
+    setModoAtual(novaAcao);
+  };
+
   return (
     <div className="Home">
-      <Navbar createEssencia={() => setCanShowAdicionaEssenciaModal(true)} />
+      <Navbar
+        mode={modoAtual}
+        createEssencia={() => setCanShowAdicionaEssenciaModal(true)}
+        updateEssencia={() => handleActions(ActionMode.ATUALIZAR)}
+      />
       <div className="Home__container">
-        <EssenciaLista essenciaCriada={essenciaParaAdicionar} />
-        {canShowAdicionaEssenciaModal && 
-          <AdicionaEssenciaModal
+        <EssenciaLista 
+          mode={modoAtual}
+          essenciaCriada={essenciaParaAdicionar} />
+        {canShowAdicionaEssenciaModal && (
+          <AdicionaEditaEssenciaModal
             closeModal={() => setCanShowAdicionaEssenciaModal(false)}
             onCreateEssencia={(essencia) => setEssenciaParaAdicionar(essencia)}
           />
-        }
+        )}
       </div>
     </div>
   );

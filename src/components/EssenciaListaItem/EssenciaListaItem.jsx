@@ -1,3 +1,4 @@
+import { ActionMode } from "constants/index";
 import "./EssenciaListaItem.css";
 
 function EssenciaListaItem({
@@ -6,7 +7,8 @@ function EssenciaListaItem({
   index,
   onRemove,
   onAdd,
-  clickItem
+  clickItem,
+  mode,
 }) {
   const badgeCounter = (canRender, index) =>
     Boolean(canRender) && (
@@ -18,13 +20,26 @@ function EssenciaListaItem({
 
   const removeButton = (canRender, index) =>
     Boolean(canRender) && (
-      <button className="Acoes__remover" onClick={(e) => {e.stopPropagation(); onRemove(index)}}>
+      <button
+        disabled={mode !== ActionMode.NORMAL}
+        className="Acoes__remover"
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove(index);
+        }}
+      >
         remover
       </button>
     );
+
+  const badgeAction = (canRender) => {
+    if (canRender)
+      return <span className="EssenciaListaItem__tag"> {mode} </span>;
+  };
   return (
-    <div className="EssenciaListaItem" onClick={() => clickItem(essencia.id) }>
+    <div className={`EssenciaListaItem ${mode !== ActionMode.NORMAL && 'EssenciaListaItem--disable'}`} onClick={() => clickItem(essencia.id)}>
       {badgeCounter(quantidadeSelecionada, index)}
+      {badgeAction(mode !== ActionMode.NORMAL)}
       <div id="Front">
         <img
           className="EssenciaListaItem__front"
@@ -41,10 +56,14 @@ function EssenciaListaItem({
         <div className="EssenciaListaItem__descricao">{essencia.descricao}</div>
         <div className="EssenciaListaItem__acoes Acoes">
           <button
+            disabled={mode !== ActionMode.NORMAL}
             className={`Acoes__adicionar ${
               !quantidadeSelecionada && "Acoes__adicionar--preencher"
             }`}
-            onClick={(e) => {e.stopPropagation(); onAdd(index);}}
+            onClick={(e) => {
+              e.stopPropagation();
+              onAdd(index);
+            }}
           >
             adicionar
           </button>

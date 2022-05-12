@@ -5,7 +5,7 @@ import { EssenciaService } from "services/EssenciaService";
 import EssenciaDetalhesModal from "components/EssenciaDetalhesModal/EssenciaDetalhesModal";
 import "./EssenciaLista.css";
 
-function EssenciaLista({essenciaCriada}) {
+function EssenciaLista({essenciaCriada, mode}) {
   const [essencias, setEssencias] = useState([]);
 
   const [essenciaSelecionada, setEssenciaSelecionada] = useState({});
@@ -53,6 +53,7 @@ function EssenciaLista({essenciaCriada}) {
     <div className="EssenciaLista">
       {essencias.map((essencia, index) => (
         <EssenciaListaItem
+          mode={mode}
           key={`EssenciaListaItem-${index}`}
           essencia={essencia}
           quantidadeSelecionada={essenciaSelecionada[index]}
