@@ -9,6 +9,9 @@ const transformEssencia = (essencia) => {
     id: essencia._id,
     titulo: essencia.titulo,
     sabor: essencia.sabor,
+    descricao: essencia.descricao,
+    foto: essencia.foto,
+    front: essencia.front
   };
 };
 
