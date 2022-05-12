@@ -31,7 +31,7 @@ function EssenciaListaItem({
           src={essencia.front}
           alt={`Essência de ${essencia.sabor}`}
         ></img>
-        <span id="Text-image">{`${essencia.titulo}`}</span>
+        <span id="Text-image">{`${essencia.sabor}`}</span>
       </div>
       <div className="EssenciaListaItem__content">
         <div className="EssenciaListaItem__titulo">{essencia.titulo}</div>
