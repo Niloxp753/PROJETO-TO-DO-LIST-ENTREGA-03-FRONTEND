@@ -5,17 +5,17 @@ import AdicionaEssenciaModal from "components/AdicionaEssenciaModal/AdicionaEsse
 import "./Home.css";
 
 function Home() {
-  const [canShowAdicionaEssenciaModal, setCanShowEssenciaModal] =
+  const [canShowAdicionaEssenciaModal, setCanShowAdicionaEssenciaModal] =
     useState(false);
   const [essenciaParaAdicionar, setEssenciaParaAdicionar] = useState();
   return (
     <div className="Home">
-      <Navbar createEssencia={() => setCanShowEssenciaModal(true)} />
+      <Navbar createEssencia={() => setCanShowAdicionaEssenciaModal(true)} />
       <div className="Home__container">
         <EssenciaLista essenciaCriada={essenciaParaAdicionar} />
         {canShowAdicionaEssenciaModal && 
           <AdicionaEssenciaModal
-            closeModal={() => setCanShowEssenciaModal(false)}
+            closeModal={() => setCanShowAdicionaEssenciaModal(false)}
             onCreateEssencia={(essencia) => setEssenciaParaAdicionar(essencia)}
           />
         }

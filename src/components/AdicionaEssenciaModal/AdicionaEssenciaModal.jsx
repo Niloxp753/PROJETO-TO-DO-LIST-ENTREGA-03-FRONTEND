@@ -102,18 +102,6 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
             />
           </div>
           <div>
-            <label className="AdicionaEssenciaModal__text" htmlFor="aroma">
-              Aroma:{" "}
-            </label>
-            <input
-              id="aroma"
-              type="text"
-              placeholder="Doce"
-              value={state.aroma}
-              onChange={(e) => handleChange(e, "aroma")}
-            />
-          </div>
-          <div>
             <label className="AdicionaEssenciaModal__text" htmlFor="descricao">
               Descrição:{" "}
             </label>
@@ -162,9 +150,9 @@ function AdicionaEssenciaModal({ closeModal, onCreateEssencia }) {
             />
           </div>
           <button
+            className="AdicionaEssenciaModal__enviar"
             type="button"
             disabled={canDisable}
-            className="AdicionaEssenciaModal__enviar"
             onClick={createEssencia} >
             Enviar
           </button>
