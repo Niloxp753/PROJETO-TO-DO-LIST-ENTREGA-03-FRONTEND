@@ -57,8 +57,8 @@ function EssenciaLista({essenciaCriada}) {
           essencia={essencia}
           quantidadeSelecionada={essenciaSelecionada[index]}
           index={index}
-          onRemove={(index) => removerItem(index)}
           onAdd={(index) => adicionarItem(index)}
+          onRemove={(index) => removerItem(index)}
           clickItem={(essenciaId) => getEssenciaById(essenciaId)}
         />
       ))}
