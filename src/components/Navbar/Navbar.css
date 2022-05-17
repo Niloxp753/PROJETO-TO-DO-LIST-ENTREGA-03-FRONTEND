@@ -88,6 +88,10 @@
   filter: invert(2);
 }
 
+.Essencia--deletar {
+  filter: invert(1);
+}
+
 @media (max-width: 1220px) {
   .Header {
     max-width: 720px;

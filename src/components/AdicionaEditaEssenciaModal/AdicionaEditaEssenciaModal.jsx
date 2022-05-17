@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import Modal from "components/Modal/Modal";
 import { EssenciaService } from "services/EssenciaService";
-
+import { ActionMode } from "constants/index";
 import "./AdicionaEditaEssenciaModal.css";
 
-function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
+
+function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia, mode, essenciaToUpdate, onUpdateEssencia }) {
   const form = {
-    titulo: "",
-    preco: "",
-    sabor: "",
-    aroma: "",
-    descricao: "",
-    foto: "",
-    front: "",
+    titulo: essenciaToUpdate?.titulo ?? "",
+    preco: essenciaToUpdate?.preco ?? "",
+    sabor: essenciaToUpdate?.sabor ?? "",
+    descricao: essenciaToUpdate?.descricao ?? "",
+    foto: essenciaToUpdate?.foto ?? "",
+    front: essenciaToUpdate?.front ?? "",
   };
 
   const [state, setState] = useState(form);
@@ -22,7 +22,7 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
     const response = !Boolean(
       state.descricao.length &&
         state.foto.length &&
-        state.preco.length &&
+        String(state.preco).length &&
         state.sabor.length &&
         state.front.length &&
         state.titulo.length
@@ -38,12 +38,13 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
     canDisableSendButton();
   });
 
-  const createEssencia = async () => {
-    const renomeiaCaminhoFoto = (fotoPath) => fotoPath.split("\\").pop();
+  const handleSend = async () => {
+    const renomeiaCaminhoFoto = (fotoPath) => fotoPath.split(/\\|\//).pop();
 
     const { titulo, sabor, descricao, preco, foto, front } = state;
 
     const essencia = {
+      ...(essenciaToUpdate && { _id: essenciaToUpdate?.id }),
       titulo,
       descricao,
       preco,
@@ -52,8 +53,31 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
       front: `assets/images/${renomeiaCaminhoFoto(front)}`,
     };
 
-    const response = await EssenciaService.create(essencia);
-    onCreateEssencia(response);
+    const serviceCall = {
+      [ActionMode.NORMAL]: () => EssenciaService.create(essencia),
+      [ActionMode.ATUALIZAR]: () => EssenciaService.updtateById(essenciaToUpdate?.id, essencia),
+    }
+
+    const response = await serviceCall[mode]();
+
+    const actionResponse = {
+      [ActionMode.NORMAL]: () => onCreateEssencia(response),
+      [ActionMode.ATUALIZAR]: () => onUpdateEssencia(response),
+    }
+
+    actionResponse[mode]();
+
+    const reset = {
+      titulo: '',
+      descricao: '',
+      preco: '',
+      sabor: '',
+      foto: '',
+      front: '',
+    }
+
+    setState(reset);
+
     closeModal();
   };
 
@@ -61,7 +85,7 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
     <Modal closeModal={closeModal}>
       <div className="AdicionaEssenciaModal">
         <form autoComplete="off">
-          <h2>Adicionar ao Cardápio</h2>
+        <h2> { ActionMode.ATUALIZAR === mode ? 'Atualizar' : 'Adicionar ao' } Cardápio </h2>
           <div>
             <label className="AdicionaEssenciaModal__text" htmlFor="titulo">
               Título:{" "}
@@ -128,7 +152,6 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
               id="foto"
               type="file"
               accept="image/png, image/gif, image/jpeg, image/_png"
-              value={state.foto}
               onChange={(e) => handleChange(e, "foto")}
               required
             />
@@ -144,7 +167,6 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
               className="AdicionaEssenciaModal__foto"
               id="front"
               type="file"
-              value={state.front}
               onChange={(e) => handleChange(e, "front")}
               required
             />
@@ -153,8 +175,8 @@ function AdicionaEditaEssenciaModal({ closeModal, onCreateEssencia }) {
             className="AdicionaEssenciaModal__enviar"
             type="button"
             disabled={canDisable}
-            onClick={createEssencia} >
-            Enviar
+            onClick={handleSend} >
+            {ActionMode.NORMAL === mode ? 'Enviar' : 'Atualizar'}
           </button>
         </form>
       </div>

@@ -3,7 +3,6 @@ import { Api } from "helpers/Api";
 const parseResponse = (response) => response.json();
 
 const transformEssencia = (essencia) => {
-
   return {
     ...essencia,
     id: essencia._id,
@@ -11,7 +10,7 @@ const transformEssencia = (essencia) => {
     sabor: essencia.sabor,
     descricao: essencia.descricao,
     foto: essencia.foto,
-    front: essencia.front
+    front: essencia.front,
   };
 };
 
@@ -31,10 +30,15 @@ export const EssenciaService = {
       method: "POST",
       body: JSON.stringify(essencia),
       mode: "cors",
-      headers: { "Content-Type": "application/json" 
-    } }).then(parseTransformItem),
-  updtateById: (id) =>
-    fetch(Api.updateEssenciaById(id), { method: "PUT" }).then(parseResponse),
+      headers: { "Content-Type": "application/json" },
+    }).then(parseTransformItem),
+  updtateById: (id, essencia) =>
+    fetch(Api.updateEssenciaById(id), {
+      method: "PUT",
+      body: JSON.stringify(essencia),
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+    }).then(parseResponse),
   deleteById: (id) =>
     fetch(Api.deleteEssenciaById(id), { method: "DELETE" }).then(parseResponse),
 };

@@ -34,10 +34,24 @@ function EssenciaListaItem({
 
   const badgeAction = (canRender) => {
     if (canRender)
-      return <span className="EssenciaListaItem__tag"> {mode} </span>;
+      return (
+        <span
+          className={`EssenciaListaItem__tag ${
+            mode === ActionMode.DELETAR && "EssenciaListaItem__tag--deletar"
+          }`}
+        >
+          {" "}
+          {mode}{" "}
+        </span>
+      );
   };
   return (
-    <div className={`EssenciaListaItem ${mode !== ActionMode.NORMAL && 'EssenciaListaItem--disable'}`} onClick={() => clickItem(essencia.id)}>
+    <div
+      className={`EssenciaListaItem 
+      ${mode !== ActionMode.NORMAL && "EssenciaListaItem--disable"}
+      ${mode === ActionMode.DELETAR && "EssenciaListaItem--deletar"}`}
+      onClick={() => clickItem(essencia.id)}
+    >
       {badgeCounter(quantidadeSelecionada, index)}
       {badgeAction(mode !== ActionMode.NORMAL)}
       <div id="Front">
