@@ -4,15 +4,15 @@
   
   .DeletaEssenciaModal > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: relative;
-  }
+}
   
   .DeletaEssenciaModal__foto {
     position: absolute;
-    right: 0px;
-    bottom: 10px;
-    width: 80px;
+    right: -5px;
+    bottom: 20px;
+    width: 90px;
   }
   
   .DeletaEssenciaModal__confirmar,
@@ -26,7 +26,7 @@
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    width: 48%;
+    width: 45%;
     color: white;
   }
   
