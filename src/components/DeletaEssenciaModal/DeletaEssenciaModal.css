@@ -37,3 +37,11 @@
   .DeletaEssenciaModal__cancelar {
     background-color: #800606;
   }
+
+  @media (max-width: 375px) {
+    div.EssenciaDetalhesModal {
+      width: 260px;
+    }
+  }
+
+ 

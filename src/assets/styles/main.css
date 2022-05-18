@@ -11,6 +11,7 @@ html {
     background-size: 400% 300%;
     animation: colors 15s ease-in infinite;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 @keyframes colors {

@@ -47,7 +47,7 @@ function DeletaEssenciaModal({
           </button>
         </div>
       </div>
-    </Modal>
+    </Modal> 
   );
 }
 

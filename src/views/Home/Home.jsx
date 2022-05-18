@@ -57,7 +57,9 @@ function Home() {
           updateEssencia={handleUpdateEssencia}
           essenciaRemovida={essenciaRemovida}
         />
+        
         {canShowAdicionaEssenciaModal && (
+      
           <AdicionaEditaEssenciaModal
             mode={modoAtual}
             essenciaToUpdate={essenciaParaEditar}
@@ -65,7 +67,9 @@ function Home() {
             closeModal={handleCloseModal}
             onCreateEssencia={(essencia) => setEssenciaParaAdicionar(essencia)}
           />
+          
         )}
+        
         {essenciaParaDeletar && (
           <DeletaEssenciaModal
             essenciaParaDeletar={essenciaParaDeletar}

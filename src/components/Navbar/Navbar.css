@@ -17,7 +17,7 @@
   align-items: center;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.3);
-  width: 265px;
+  width: 245px;
   height: 45px;
 }
 
@@ -109,7 +109,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 415px) {
   .Header {
     max-width: 250px;
   }
@@ -119,11 +119,17 @@
   }
 
   .Logo {
-    width: 100%;
+    width: 255px;
   }
 
-  .Logo__titulo {
-    font-size: 1.5em;
+  span.Logo__titulo {
+    font-size: 1.7em;
+  }
+
+  .Opcoes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 

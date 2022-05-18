@@ -1,6 +1,6 @@
 div.EssenciaListaItem {
   perspective: 1000px;
-  z-index: 0;
+  z-index: -1;
 }
 
 .EssenciaListaItem {
@@ -15,11 +15,12 @@ div.EssenciaListaItem {
   transform-style: preserve-3d;
   transition: all 0.5s linear 0.1s;
   cursor: pointer;
-  z-index: 0;
+  z-index: -1;
 }
 
 .EssenciaListaItem:hover {
   transform: rotateY(180deg);
+  z-index: -1;
 }
 
 .EssenciaListaItem:hover .EssenciaListaItem__badge {
@@ -32,6 +33,7 @@ div.EssenciaListaItem {
 
 .EssenciaListaItem:active {
   transform: rotateY(180deg);
+  z-index: -1;
 }
 
 
@@ -41,7 +43,7 @@ div.EssenciaListaItem {
   align-items: center;
   position: relative;
   backface-visibility: hidden;
-  z-index: 0;
+  z-index: -1;
 }
 
 #Text-image {
@@ -61,6 +63,7 @@ img.EssenciaListaItem__front {
   height: 168px;
   object-fit: cover;
   transform: rotateY(180deg);
+  z-index: -1;
 }
 
 .EssenciaListaItem>div {
@@ -68,6 +71,7 @@ img.EssenciaListaItem__front {
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
+  z-index: -1;
 }
 
 .EssenciaListaItem__content {
@@ -205,4 +209,28 @@ span.EssenciaListaItem__tag {
   left: -9px;
   z-index: 2;
   transform: rotateY(360deg);
+}
+
+@media (max-width: 415px) {
+  div.EssenciaLista{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img.EssenciaListaItem__front {
+    left: 4px;
+    width: 320px;
+    z-index: -1;
+  }
+
+  div.EssenciaListaItem.false {
+    width: 300px;
+    z-index: -1;
+  }
+
+  button.Acoes__adicionar {
+    width: 200px;
+  }
 }

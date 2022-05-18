@@ -42,9 +42,9 @@
     height: 315px;
   }
   
-  @media (max-width: 400px) {
+  @media (max-width: 415px) {
     .EssenciaDetalhesModal {
-      width: 210px;
+      width: 270px;
       height: 100vh;
     }
   
@@ -52,6 +52,7 @@
       height: 250px;
       margin-top: 50px;
       margin-right: -100px;
+      object-fit: cover;
     }
   
     .EssenciaDetalhesModal__preco {

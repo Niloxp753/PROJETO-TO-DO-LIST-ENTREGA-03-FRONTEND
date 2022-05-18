@@ -17,9 +17,12 @@
   justify-content: center;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
   .Home__container {
     justify-content: unset;
+  }
+  .Logo{
+    width: 235px;
   }
 }
 
@@ -96,13 +99,17 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
   .Header {
     max-width: 250px;
   }
 
   .row {
     column-gap: 20px;
+  }
+
+  .Logo {
+    width: 255px;
   }
 
   .Logo__titulo {
