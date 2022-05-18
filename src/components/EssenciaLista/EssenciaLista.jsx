@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from "react";
 import EssenciaListaItem from "components/EssenciaListaItem/EssenciaListaItem";
 import { EssenciaService } from "services/EssenciaService";
@@ -16,9 +15,11 @@ function EssenciaLista({
   essenciaEditada,
   essenciaRemovida,
 }) {
+  const selecionadas = JSON.parse(localStorage.getItem("selecionadas")) ?? {};
+
   const [essencias, setEssencias] = useState([]);
 
-  const [essenciaSelecionada, setEssenciaSelecionada] = useState({});
+  const [essenciaSelecionada, setEssenciaSelecionada] = useState(selecionadas);
 
   const [essenciaModal, setEssenciaModal] = useState(false);
 
@@ -28,6 +29,19 @@ function EssenciaLista({
     };
     setEssenciaSelecionada({ ...essenciaSelecionada, ...essencia });
   };
+
+  const setSelecionadas = useCallback(() => {
+    if (!essencias.length) return;
+
+    const entries = Object.entries(essenciaSelecionada);
+    const sacola = entries.map((arr) => ({
+      essenciaId: essencias[arr[0]].id,
+      quantidade: arr[1],
+    }));
+
+    localStorage.setItem("sacola", JSON.stringify(sacola));
+    localStorage.setItem("selecionadas", JSON.stringify(essenciaSelecionada));
+  }, [essenciaSelecionada, essencias]);
 
   const removerItem = (essenciaIndex) => {
     const essencia = {
@@ -63,6 +77,10 @@ function EssenciaLista({
     },
     [essencias]
   );
+
+  useEffect(() => {
+    setSelecionadas();
+  }, [setSelecionadas, essenciaSelecionada]);
 
   useEffect(() => {
     if (
