@@ -14,6 +14,7 @@ function EssenciaLista({
   updateEssencia,
   deleteEssencia,
   essenciaEditada,
+  essenciaRemovida,
 }) {
   const [essencias, setEssencias] = useState([]);
 
@@ -53,7 +54,7 @@ function EssenciaLista({
 
   useEffect(() => {
     getLista();
-  }, [essenciaEditada]);
+  }, [essenciaEditada, essenciaRemovida]);
 
   const adicionaEssenciaNaLista = useCallback(
     (essencia) => {
