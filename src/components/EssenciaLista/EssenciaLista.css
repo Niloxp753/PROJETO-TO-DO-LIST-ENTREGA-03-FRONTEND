@@ -7,4 +7,5 @@
   gap: 35px;
   transform-style: preserve-3d;
   position: relative;
+  z-index: 0;
 }
